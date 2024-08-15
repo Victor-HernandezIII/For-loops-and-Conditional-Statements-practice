@@ -6,9 +6,31 @@
 
 export function getClientWithLeastPositiveBalance(array) {
   // Your code goes here...
-  
-}
+ let tempArray = [];
+  let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        if(array[i].balance != 0){
+            tempArray.push(array[i].balance);
+            }
+        if(array[i].balance < 0)
+          return [];
+        }
+    let minVal = tempArray[1];
+    //find min
+    for (let i = 0; i < tempArray.length; i++) {
+        if(minVal > tempArray[i + 1]) {
+            minVal = tempArray[i + 1];
+        }
+    }
 
+    for (let i = 0; i < array.length; i++){
+        if(array[i].balance == minVal){
+            array = array[i];
+        }
+    }
+    newArray.push(array);
+    return newArray;
+}
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"
 // If the test has all tests passed, switch to the next exercise file
