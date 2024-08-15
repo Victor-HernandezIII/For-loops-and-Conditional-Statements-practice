@@ -16,7 +16,7 @@ export function getClientWithLeastPositiveBalance(array) {
           return [];
         }
     let minVal = tempArray[1];
-    //find min
+
     for (let i = 0; i < tempArray.length; i++) {
         if(minVal > tempArray[i + 1]) {
             minVal = tempArray[i + 1];
