@@ -6,7 +6,24 @@
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
-
+let tallyWithdrawals = [];
+  let totalWithdrawals = [];
+  let sum = 0;
+  for (let i = 0; i < array.length; i++){
+      if(array[i].withdrawals != null){
+          tallyWithdrawals.push(array[i].withdrawals);
+      } else {
+        tallyWithdrawals.push(0);
+      }
+  }
+  for(let i = 0; i < tallyWithdrawals.length; i++){
+      for (let j = 0; j < tallyWithdrawals[i].length; j++){
+          sum += tallyWithdrawals[i][j];
+      }
+      totalWithdrawals.push(sum);
+      sum = 0;
+  }
+  return totalWithdrawals;
 }
 
 // === TEST YOURSELF ===
